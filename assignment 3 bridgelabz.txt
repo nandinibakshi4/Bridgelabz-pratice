@@ -1,0 +1,236 @@
+Program 1: Basic Calculator
+ Q: Write a program to create a basic calculator for addition, subtraction, multiplication, 
+ and division. The program should ask for two floating-point numbers and perform all four operations.
+ 
+ 
+ import java.util.Scanner;
+
+class BasicCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Take user input
+        System.out.print("Enter first number: ");
+        double number1 = input.nextDouble();
+
+        System.out.print("Enter second number: ");
+        double number2 = input.nextDouble();
+
+        // Perform operations
+        double sum = number1 + number2;
+        double difference = number1 - number2;
+        double product = number1 * number2;
+        double quotient = number1 / number2;
+
+        // Display result
+        System.out.println("The addition, subtraction, multiplication, and division value of 2 numbers " +
+                           number1 + " and " + number2 + " is " +
+                           sum + ", " + difference + ", " + product + ", and " + quotient);
+    }
+}
+
+Program 2: Area of Triangle in cm² and in²
+📘 Q: Write a program that takes base and height in cm and calculates the area of the triangle in both square centimeters and square inches.
+📌 Hint: 1 inch = 2.54 cm
+
+import java.util.Scanner;
+
+class TriangleAreaConverter {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input
+        System.out.print("Enter base in cm: ");
+        double base = input.nextDouble();
+
+        System.out.print("Enter height in cm: ");
+        double height = input.nextDouble();
+
+        // Calculate area in cm² and convert to in²
+        double areaCmSq = 0.5 * base * height;
+        double areaInSq = areaCmSq / (2.54 * 2.54);
+
+        // Output
+        System.out.println("The Area of the triangle in sq in is " + areaInSq + " and sq cm is " + areaCmSq);
+    }
+}
+
+ Program 3: Side of Square from Perimeter
+📘 Q: Write a program to find the side of the square when the perimeter is given by the user.
+📌 Hint: Perimeter = 4 × side
+
+import java.util.Scanner;
+
+class SquareSideCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input
+        System.out.print("Enter perimeter of square: ");
+        double perimeter = input.nextDouble();
+
+        // Calculate side
+        double side = perimeter / 4;
+
+        // Output
+        System.out.println("The length of the side is " + side + " whose perimeter is " + perimeter);
+    }
+}
+
+ Program 4: Convert Feet to Yards and Miles
+📘 Q: Write a program to find the distance in yards and miles for the distance provided by the user in feet.
+📌 Hint: 1 yard = 3 feet, 1 mile = 1760 yards
+
+
+import java.util.Scanner;
+
+class FeetToYardsAndMiles {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input
+        System.out.print("Enter distance in feet: ");
+        double distanceFeet = input.nextDouble();
+
+        // Conversion
+        double distanceYards = distanceFeet / 3;
+        double distanceMiles = distanceYards / 1760;
+
+        // Output
+        System.out.println("The distance in yards is " + distanceYards + 
+                           " while the distance in miles is " + distanceMiles);
+    }
+}
+
+Program 5: Calculate Total Purchase Price
+📘 Q: Write a program to input the unit price of an item and the quantity to be bought. 
+Then calculate the total price
+
+import java.util.Scanner;
+
+class TotalPriceCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input
+        System.out.print("Enter unit price: ");
+        double unitPrice = input.nextDouble();
+
+        System.out.print("Enter quantity: ");
+        int quantity = input.nextInt();
+
+        // Calculation
+        double totalPrice = unitPrice * quantity;
+
+        // Output
+        System.out.println("The total purchase price is INR " + totalPrice + 
+                           " if the quantity is " + quantity + 
+                           " and unit price is INR " + unitPrice);
+    }
+}
+
+Program 6: Quotient and Remainder
+📘 Q: Write a program to take 2 numbers and print their quotient and remainder.
+📌 Hint: Use / for quotient and % for remainder
+
+import java.util.Scanner;
+
+class QuotientAndRemainder {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input
+        System.out.print("Enter first number: ");
+        int number1 = input.nextInt();
+
+        System.out.print("Enter second number: ");
+        int number2 = input.nextInt();
+
+        // Calculate quotient and remainder
+        int quotient = number1 / number2;
+        int remainder = number1 % number2;
+
+        // Output
+        System.out.println("The Quotient is " + quotient + " and Remainder is " + remainder + 
+                           " of two numbers " + number1 + " and " + number2);
+    }
+}
+
+rogram 7: Int Operations with Precedence
+📘 Q: Write a program to take 3 integer inputs: a, b, and c. Then print the results of the following expressions:
+
+a + b * c
+
+a * b + c
+
+c + a / b
+
+a % b + c
+
+import java.util.Scanner;
+
+class IntOperation {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input
+        System.out.print("Enter value for a: ");
+        int a = input.nextInt();
+
+        System.out.print("Enter value for b: ");
+        int b = input.nextInt();
+
+        System.out.print("Enter value for c: ");
+        int c = input.nextInt();
+
+        // Calculations
+        int expr1 = a + b * c;
+        int expr2 = a * b + c;
+        int expr3 = c + a / b;
+        int expr4 = a % b + c;
+
+        // Output
+        System.out.println("The results of Int Operations are: " + expr1 + ", " + expr2 + ", " + expr3 + ", " + expr4);
+    }
+}
+
+Program 8: Double Operations with Precedence
+📘 Q: Write a program to take 3 double inputs: a, b, and c. Then print the results of the following expressions:
+
+a + b * c
+
+a * b + c
+
+c + a / b
+
+a % b + c
+
+import java.util.Scanner;
+
+class DoubleOperation {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Input
+        System.out.print("Enter value for a: ");
+        double a = input.nextDouble();
+
+        System.out.print("Enter value for b: ");
+        double b = input.nextDouble();
+
+        System.out.print("Enter value for c: ");
+        double c = input.nextDouble();
+
+        // Calculations
+        double expr1 = a + b * c;
+        double expr2 = a * b + c;
+        double expr3 = c + a / b;
+        double expr4 = a % b + c;
+
+        // Output
+        System.out.println("The results of Double Operations are: " + expr1 + ", " + expr2 + ", " + expr3 + ", " + expr4);
+    }
+}
+
+
+

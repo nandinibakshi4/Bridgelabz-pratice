@@ -1,0 +1,258 @@
+// Java Level 2 Practice Programs - Best Programming Practices
+
+// 1. Program to print odd and even numbers up to a user-entered number
+
+import java.util.Scanner;
+class OddEvenNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        for (int i = 1; i <= number; i++) {
+            if (i % 2 == 0)
+                System.out.println(i + " is Even");
+            else
+                System.out.println(i + " is Odd");
+        }
+        input.close();
+    }
+}
+
+// 2. Program to calculate bonus for employees based on service years
+
+import java.util.Scanner;
+class EmployeeBonus {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double salary = input.nextDouble();
+        int yearsOfService = input.nextInt();
+        if (yearsOfService > 5) {
+            double bonus = salary * 0.05;
+            System.out.println("Bonus is: INR " + bonus);
+        } else {
+            System.out.println("No bonus for service less than 5 years.");
+        }
+        input.close();
+    }
+}
+
+// 3. Program to print multiplication table from 6 to 9
+
+import java.util.Scanner;
+class MultiplicationTable {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        for (int i = 6; i <= 9; i++) {
+            System.out.println(number + " * " + i + " = " + (number * i));
+        }
+        input.close();
+    }
+}
+
+// 4. FizzBuzz using for loop
+
+import java.util.Scanner;
+class FizzBuzzFor {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        for (int i = 1; i <= number; i++) {
+            if (i % 3 == 0 && i % 5 == 0)
+                System.out.println("FizzBuzz");
+            else if (i % 3 == 0)
+                System.out.println("Fizz");
+            else if (i % 5 == 0)
+                System.out.println("Buzz");
+            else
+                System.out.println(i);
+        }
+        input.close();
+    }
+}
+
+// 5. FizzBuzz using while loop
+
+import java.util.Scanner;
+class FizzBuzzWhile {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        int i = 1;
+        while (i <= number) {
+            if (i % 3 == 0 && i % 5 == 0)
+                System.out.println("FizzBuzz");
+            else if (i % 3 == 0)
+                System.out.println("Fizz");
+            else if (i % 5 == 0)
+                System.out.println("Buzz");
+            else
+                System.out.println(i);
+            i++;
+        }
+        input.close();
+    }
+}
+
+// 6. Program to find youngest and tallest among 3 friends
+
+import java.util.Scanner;
+class FriendsComparison {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int age1 = input.nextInt(), height1 = input.nextInt();
+        int age2 = input.nextInt(), height2 = input.nextInt();
+        int age3 = input.nextInt(), height3 = input.nextInt();
+
+        int youngestAge = Math.min(age1, Math.min(age2, age3));
+        int tallestHeight = Math.max(height1, Math.max(height2, height3));
+
+        if (youngestAge == age1)
+            System.out.println("Amar is the youngest");
+        else if (youngestAge == age2)
+            System.out.println("Akbar is the youngest");
+        else
+            System.out.println("Anthony is the youngest");
+
+        if (tallestHeight == height1)
+            System.out.println("Amar is the tallest");
+        else if (tallestHeight == height2)
+            System.out.println("Akbar is the tallest");
+        else
+            System.out.println("Anthony is the tallest");
+
+        input.close();
+    }
+}
+
+// 7. Find factors using for loop
+
+import java.util.Scanner;
+class FactorsForLoop {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        for (int i = 1; i <= number; i++) {
+            if (number % i == 0) System.out.println(i);
+        }
+        input.close();
+    }
+}
+
+// 8. Find factors using while loop
+
+import java.util.Scanner;
+class FactorsWhileLoop {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        int i = 1;
+        while (i <= number) {
+            if (number % i == 0) System.out.println(i);
+            i++;
+        }
+        input.close();
+    }
+}
+
+// 9. Greatest factor (besides number) using for loop
+
+import java.util.Scanner;
+class GreatestFactorFor {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        int greatestFactor = 1;
+        for (int i = number - 1; i >= 1; i--) {
+            if (number % i == 0) {
+                greatestFactor = i;
+                break;
+            }
+        }
+        System.out.println("Greatest factor is: " + greatestFactor);
+        input.close();
+    }
+}
+
+// 10. Greatest factor using while loop
+
+import java.util.Scanner;
+class GreatestFactorWhile {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        int counter = number - 1, greatestFactor = 1;
+        while (counter >= 1) {
+            if (number % counter == 0) {
+                greatestFactor = counter;
+                break;
+            }
+            counter--;
+        }
+        System.out.println("Greatest factor is: " + greatestFactor);
+        input.close();
+    }
+}
+
+// 11. All multiples of a number below 100 using for loop
+
+import java.util.Scanner;
+class MultiplesBelow100For {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        for (int i = 1; i < 100; i++) {
+            if (i % number == 0)
+                System.out.println(i);
+        }
+        input.close();
+    }
+}
+
+// 12. Power of number using for loop
+
+import java.util.Scanner;
+class PowerForLoop {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt(), power = input.nextInt();
+        int result = 1;
+        for (int i = 1; i <= power; i++) {
+            result *= number;
+        }
+        System.out.println("Result: " + result);
+        input.close();
+    }
+}
+
+// 13. All multiples of number below 100 using while loop
+
+import java.util.Scanner;
+class MultiplesBelow100While {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt();
+        int i = 1;
+        while (i < 100) {
+            if (i % number == 0) System.out.println(i);
+            i++;
+        }
+        input.close();
+    }
+}
+
+// 14. Power of number using while loop
+
+import java.util.Scanner;
+class PowerWhileLoop {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int number = input.nextInt(), power = input.nextInt();
+        int result = 1, counter = 0;
+        while (counter < power) {
+            result *= number;
+            counter++;
+        }
+        System.out.println("Result: " + result);
+        input.close();
+    }
+}
